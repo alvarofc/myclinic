@@ -33,7 +33,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@floating-ui/dom": "^1.4.5",
+		"date-fns": "^2.30.0",
 		"flowbite": "^1.7.0",
-		"flowbite-datepicker": "^1.2.2"
+		"flowbite-svelte": "^0.40.2",
+		"tailwind-merge": "^1.14.0"
 	}
 }
