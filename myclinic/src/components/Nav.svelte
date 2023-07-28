@@ -5,7 +5,7 @@
     <div class="flex flex-wrap justify-between items-center">
       <div class="flex justify-start items-center">
         
-        <a href="#" class="flex items-center justify-between mr-4">
+        <a href="/dashboard" class="flex items-center justify-between mr-4">
           <img
             src={cross}
             class="mr-3 h-8"
@@ -205,7 +205,7 @@
                 <img
                   class="w-11 h-11 rounded-full"
                   src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
-                  alt="Roberta Casas image"
+                  alt="Roberta Casas"
                 />
                 <div
                   class="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-green-400 rounded-full border border-white dark:border-gray-700"

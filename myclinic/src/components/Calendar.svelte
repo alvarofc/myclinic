@@ -60,8 +60,8 @@
       ];
     </script>
     
-    <main class="p-4 md:ml-64 h-auto pt-20  flex items-center justify-center ">
-        <div class="w-1/4 h-[600px] ">
+    <main class="p-4 h-auto pt-20  flex items-center justify-center ">
+        <div class=" h-[600px] ">
           <div class="flex items-center justify-between">
             <p class="font-semibold text-xl">
               {format(firstDayOfMonth, "MMMM yyyy")}

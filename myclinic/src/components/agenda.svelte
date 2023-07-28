@@ -25,7 +25,7 @@
     function scrollToHour(hour: String) {
     const hourElement = container.querySelector(`[data-hour="${hour}"]`) as HTMLElement;
     if (hourElement) {
-      container.scrollTop = hourElement.offsetTop - 100;
+      container.scrollTop = hourElement.offsetTop - 400;
     }
     
   }
@@ -50,11 +50,11 @@
   });
 </script>
 
-<section class={`bg-white overflow-scroll mt-20 scroll-smooth dark:bg-gray-900 h-screen md:ml-64 antialiased md:w-2/4 `} bind:this={container}>
+<section class={`bg-white overflow-scroll  mt-20 scroll-smooth dark:bg-gray-900 h-screen md:ml-72 antialiased md:w-2/4 `} bind:this={container}>
    {#each hoursInDay as hour}
     <div>
         <div class="divider"></div> 
-        <div class={`flex flex-row ${hour === currentHour.toString()+ ":00" && 'bg-red-200'}`}>
+        <div class={`flex flex-row ${hour === currentHour.toString()+ ":00" && 'bg-red-200'} h-5/6`}>
             <div class={`w-1/6 ${hour === currentHour.toString()+ ":00" && 'bg-red-200'}`}  data-hour={hour}>
                 <div class="text-center ">
                     {hour}
