@@ -1,6 +1,6 @@
 <script>
-    import Uploader from '../../../../components/Uploader.svelte';
-    import Files from '../../../../components/Files.svelte';
+    import Uploader from '$lib/components/Uploader.svelte';
+    import Files from '$lib/components/Files.svelte';
 </script>
 
 

@@ -1,5 +1,5 @@
 <script lang=ts>
-	import NewUser from "../../../components/NewUser.svelte";
+	import NewUser from "$lib/components/NewUser.svelte";
     let userModal:boolean = false;
     let users = [
         {   
