@@ -4,8 +4,8 @@
     let uploadFile:ArrayBufferTypes // variable to store uploaded file
   
     let files = [
-        "pdf1.pdf",
-        "pdf2.pdf",
+        {name: "test.pdf", size: 1000},
+        {name: "test2.pdf", size: 2000},
     ]; // array to store uploaded files
     let uploadMode = false; // flag to toggle upload mode
   
@@ -52,9 +52,9 @@
               </svg>
         </button>
         <button class=" text-white font-bold py-2 px-4 rounded" on:click={() => handleSend(file)}>
-            <svg class="w-6 h-6 text-gray-800 hover:text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 18">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 1v11m0 0 4-4m-4 4L4 8m11 4v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3"/>
-              </svg>
+          <svg class="w-6 h-6 text-gray-800 hover:text-blue-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 2-8.4 7.05a1 1 0 0 1-1.2 0L1 2m18 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1m18 0v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2"/>
+          </svg>
         </button>
       </div>
     </div>

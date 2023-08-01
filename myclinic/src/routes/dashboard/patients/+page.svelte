@@ -51,10 +51,7 @@
     ]
     
 
-    function selectPatient(id:number){
-        var strLink = "/patients/" + id;
-        document.getElementById("user_"+id).setAttribute("href", strLink);
-    }
+   
 </script>
 
 <NewUser bind:clickOutsideModal={userModal}/>
