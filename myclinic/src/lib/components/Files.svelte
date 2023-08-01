@@ -1,7 +1,10 @@
 <script lang="ts">
     import Uploader from "./Uploader.svelte";
     // import necessary libraries for email functionality
-    let uploadFile:ArrayBufferTypes // variable to store uploaded file
+    function handleFileSelected(event) {
+    // Handle file upload here
+    console.log(event.detail.file);
+  }
   
     let files = [
         {name: "test.pdf", size: 1000},
@@ -31,7 +34,7 @@
   Upload File
 </button>
 {:else}
-<Uploader on:upload={handleUpload} bind:uploadMode bind:uploadFile  />
+<Uploader  />
 
 {/if}
 <!-- code for upload mode -->
