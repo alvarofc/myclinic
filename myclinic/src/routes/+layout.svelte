@@ -12,8 +12,9 @@
     });
     
   </script>
-  
-  <main>
+  <html class="scroll-smooth">
+  <main >
     
     <slot />
   </main>
+  </html>
