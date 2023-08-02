@@ -38,7 +38,7 @@
 <section class="bg-white dark:bg-gray-900 md:h-screen md:pt-20">
     <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Effortlessly Manage Your Clinic and Improve Patient Outcomes</h1>
+            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Designed For <span>You </span><br> With <span class="text-blue-700"> Your Patients</span> In Mind</h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Say goodbye to confusing paperwork, missed appointments, and disorganized patient records. Our software streamlines your workflow and saves you time so you can focus on what really matters - your patients.</p>
             <a href="/signup">
             <Button color="blue" size="lg">
@@ -202,8 +202,8 @@
             
     </div>
   </section>
- <section class="bg-blue-950 h-96">
-    <div>
+ <section class="bg-blue-950 h-96 ">
+    <div class="content-center">
         <div class="max-w-6xl px-6 py-16 mx-auto text-center">
             <h2 class="text-5xl font-bold text-white">Deliver your best work with scruber.us</h2>
             <p class="mt-4 mb-8 text-lg text-white">Start your free 14-day trial today.</p>
