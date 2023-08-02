@@ -70,7 +70,7 @@
                       </svg>
                 </div>
                 <h3 class="mb-2 text-xl font-bold dark:text-white">Scheduler and booking</h3>
-                <p class="text-gray-500 dark:text-gray-400">Plan it, create it, launch it. Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.</p>
+                <p class="text-gray-500 dark:text-gray-400">Manage appointments and consultations with patients. They can easily create, cancel appointments.Send reminders, and keep track of the clinic's schedule.</p>
             </div>
             <div>
                 <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
@@ -100,7 +100,8 @@
                         </svg>
                 </div>
                 <h3 class="mb-2 text-xl font-bold dark:text-white">Realtime messaging</h3>
-                <p class="text-gray-500 dark:text-gray-400">Audit-proof software built for critical financial operations like month-end close and quarterly budgeting.</p>
+                <p class="text-gray-500 dark:text-gray-400">communication between clinic staff and patients in real-time. This ensures that everyone is on the same page and provides a convenient way for patients to ask questions or provide updates.
+                </p>
             </div>
             <div>
                 <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
@@ -119,7 +120,7 @@
                       </svg>
                 </div>
                 <h3 class="mb-2 text-xl font-bold dark:text-white">Notes</h3>
-                <p class="text-gray-500 dark:text-gray-400">Keep your company's lights on with customizable, iterative, and structured workflows built for all efficient teams and individual.</p>
+                <p class="text-gray-500 dark:text-gray-400">Record essential observations, recommendations, and other vital information about a patient's condition or treatment plan. Share them with the patient or don't</p>
             </div>
         </div>
     </div>
