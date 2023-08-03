@@ -70,7 +70,7 @@
                       </svg>
                 </div>
                 <h3 class="mb-2 text-xl font-bold dark:text-white">Scheduler and booking</h3>
-                <p class="text-gray-500 dark:text-gray-400">Manage appointments and consultations with patients. They can easily create, cancel appointments.Send reminders, and keep track of the clinic's schedule.</p>
+                <p class="text-gray-500 dark:text-gray-400">Manage appointments and consultations with patients. Send reminders, and keep track of the clinic's schedule.</p>
             </div>
             <div>
                 <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
@@ -111,7 +111,7 @@
                       </svg>
                 </div>
                 <h3 class="mb-2 text-xl font-bold dark:text-white">Secure file sharing</h3>
-                <p class="text-gray-500 dark:text-gray-400">Craft beautiful, delightful experiences for both marketing and product with real cross-company collaboration.</p>
+                <p class="text-gray-500 dark:text-gray-400">Safely share medical records, test results, and other critical documents with patients or other healthcare providers. Sensitive information is protected and shared only with authorized individuals.</p>
             </div>
             <div>
                 <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
@@ -133,7 +133,7 @@
             <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">We believe in transparency and simplicity when it comes to pricing. That's why our comprehensive patient management software is available at a single, flat rate that includes all of the features you need to manage your clinic effectively.</p>
         </div>
         <div defaultClass="flex rounded-lg divide-x divide-gray-200 shadow focus:outline-none">
-            <Tabs style="full" defaultClass="flex rounded-lg divide-x divide-gray-200 shadow ">
+            <Tabs style="full" defaultClass="flex rounded-lg divide-x divide-gray-200 shadow focus:outline-none">
             <!-- Pricing Card -->
             <TabItem   class="w-full" open>
             <span slot="title">Monthly</span>
@@ -146,7 +146,7 @@
                     <span class="text-gray-500 dark:text-gray-400">/month</span>
                     
                 </div>
-                <span class="mb-8 text-gray-500">Up to 8 practitioners, get in touch for more</span>
+                <span class="mb-8 text-gray-500">Up to 8 practitioners</span>
                 <!-- List -->
                 <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
@@ -175,7 +175,7 @@
                         <span>Secure file sharing and comunication</span>
                     </li>
                 </ul>
-                <Button color="blue" >Try 14 days for free</Button>
+                <Button color="blue" >Try 30 days for free</Button>
             </div>
         </TabItem>
         <TabItem   class="w-full">
@@ -187,7 +187,7 @@
                     <span class="mr-2 text-5xl font-extrabold">790€</span>
                     <span class="text-gray-500 dark:text-gray-400">/year</span>
                 </div>
-                <span class="mb-8 text-gray-500">Up to 8 practitioners, get in touch for more</span>
+                <span class="mb-8 text-gray-500">Up to 8 practitioners</span>
                 <!-- List -->
                 <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
@@ -216,18 +216,18 @@
                         <span>Secure file sharing and comunication</span>
                     </li>
                 </ul>
-                <Button color="blue" >Try 14 days for free</Button>
+                <Button color="blue" >Try 30 days for free</Button>
             </div>
         </TabItem>
         </Tabs>
             
     </div>
   </section>
- <section class="bg-blue-950 h-96 ">
-    <div class="content-center">
+ <section class="bg-blue-950 h-96 content-center">
+    <div class="">
         <div class="max-w-6xl px-6 py-16 mx-auto text-center">
-            <h2 class="text-5xl font-bold text-white">Deliver your best work with scruber.us</h2>
-            <p class="mt-4 mb-8 text-lg text-white">Start your free 14-day trial today.</p>
+            <h2 class="text-5xl font-bold text-white">Deliver your best work with scruber</h2>
+            <p class="mt-4 mb-8 text-lg text-white">Start your free 30-day trial today.</p>
             <Button color="light" >
                 Get started  
                 <svg class="w-5 h-5 ml-2 -mr-1 translate-x-0 relative transition duration-150 ease-in-out group-hover:transition group-hover:duration-150 group-hover:ease-in-out group-hover:translate-x-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -272,10 +272,10 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Privacy Policy</a>
+                            <a href="/legal/policy" class="hover:underline">Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            <a href="/legal/terms" class="hover:underline">Terms &amp; Conditions</a>
                         </li>
                     </ul>
                 </div>
@@ -283,7 +283,7 @@
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://scrujber.us" class="hover:underline">Scruber</a>. All Rights Reserved.
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://scruber.us" class="hover:underline">Scruber</a>. All Rights Reserved.
             </span>
             <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                 <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
