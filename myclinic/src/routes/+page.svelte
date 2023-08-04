@@ -47,11 +47,16 @@
             </Button>
             </a>
             <a href="/contact" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                Contact us
+                Book a call
             </a> 
         </div>
         <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
+            <div class="mockup-browser border bg-base-300">
+                <div class="mockup-browser-toolbar">
+                  <div class="input">https://yourclinic.scruber.us</div>
+                </div>
+                <img src="" class="flex justify-center px-4 py-16 bg-base-200">
+              </div>
         </div>                
     </div>
     <!--Features-->

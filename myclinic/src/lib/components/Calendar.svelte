@@ -60,7 +60,7 @@
       ];
     </script>
     
-    <main class="p-4 h-auto pt-20  flex items-center justify-center ">
+    <div class="p-4  mt-16 ml-6 flex items-center justify-center shadow-md bg-white rounded-lg h-1/4">
         <div class=" h-[600px] ">
           <div class="flex items-center justify-between">
             <p class="font-semibold text-xl">
@@ -100,6 +100,6 @@
             {/each}
             
           </div>
-          
+          <div class="divider"></div>
         </div>
-    </main>
+      </div>

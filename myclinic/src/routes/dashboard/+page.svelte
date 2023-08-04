@@ -105,9 +105,9 @@
       {#if requests.length === 0}
         <p>No appointments found.</p>
       {:else}
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-4">
           {#each requests as appointment, index}
-            <div class="border rounded-lg p-4 flex flex-col justify-between">
+            <div class="border rounded-lg shadow-md bg-white p-4 flex flex-col justify-between">
               <div class="mb-2">
                 <h2 class="text-lg font-semibold">{appointment.patient}</h2>
                 <p>{appointment.request}</p>
