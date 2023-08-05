@@ -38,10 +38,7 @@
       </div>
       <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
           <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-              <li><a href="/#features" class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Features</a></li>
-              <li><a href="/#pricing" class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Pricing</a></li>
-              <!--<li><a href="/blog" class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Blog</a></li>-->
-              <!--<li><a href="/contact" class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Contact</a></li> -->
+              
           </ul>
       </div>
   </div>
@@ -70,7 +67,7 @@
         {#if step === 1}
           <!-- Step 1: User details -->
           <h2 class="text-xl font-semibold mb-4">Step 1: About you</h2>
-          
+          <p>You'll be the Scruber account admin since you're creating the account (you can chnge this later).</p>
             <Label class="block mb-2">Name</Label>
             <Input type="text" name="name" class="border rounded-lg px-4 py-2 mb-4 w-full" placeholder="Enter your name" />
             <Label class="block mb-2">Surname</Label>

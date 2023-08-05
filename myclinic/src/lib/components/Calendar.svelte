@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 
     import {
         format,
@@ -14,9 +14,20 @@
 		isDate,
 		isSameDay,
         } from "date-fns";
+
+    import {Button} from "flowbite-svelte";
+    import {selectedDate} from '$lib/store'
     
+
+    let newSelectedDate: Date;
     const today = startOfToday();
-    let selectedDate = today;
+    
+    selectedDate.subscribe((value) => {
+      newSelectedDate = value;
+	});
+
+  
+    
     let currMonth =  format(today, "MMM-yyyy");
     
    let firstDayOfMonth = parse(currMonth, "MMM-yyyy", new Date());
@@ -91,8 +102,8 @@
           <div class="grid grid-cols-7 gap-6 sm:gap-12 mt-8 place-items-center ">
             {#each daysInMonth as day}
                 <div class={`${colStartClasses[getDay(day)]}`}>
-                    <button type="button" on:click={() => selectedDate = day}
-                    class={`cursor-pointer flex items-center justify-center font-semibold h-8 w-8 rounded-full  hover:text-white ${isBefore(day, today) ? "text-gray-400" : "text-gray-900" } ${!isSameDay(day, selectedDate) && "hover:bg-blue-500"} ${isSameDay(day, selectedDate) && "bg-red-500 text-white"}`}
+                    <button type="button" on:click={() => {selectedDate.set(day); console.log(day); console.log("New "+newSelectedDate)}} 
+                    class={`cursor-pointer flex items-center justify-center font-semibold h-8 w-8 rounded-full  hover:text-white ${isBefore(day, today) ? "text-gray-400" : "text-gray-900" } ${!isSameDay(day, newSelectedDate) && "hover:bg-blue-500"} ${isSameDay(day, newSelectedDate) && "bg-red-500 text-white"}`}
                     >
                     {format(day, "d")}
                 </button>
@@ -101,5 +112,6 @@
             
           </div>
           <div class="divider"></div>
+          <Button color="blue" class="w-full">New appointment</Button>
         </div>
       </div>
