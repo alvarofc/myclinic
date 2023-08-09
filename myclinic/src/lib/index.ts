@@ -246,7 +246,7 @@ export const countryList = [
 	{"name": "Zambia", "value": "ZM"}, 
 	{"name": "Zimbabwe", "value": "ZW"} 
 	]
-
+/* 
 export function getSubdomain(host:string) {
 	console.log("we got: ",host)
 	const parts = host.split('.');
@@ -268,3 +268,4 @@ export async function isValidTenant(subdomain:string) {
 	
 }
 
+ */

@@ -1,6 +1,6 @@
 import { getSubdomain, isValidTenant } from "$lib"
 import type { Handle } from '@sveltejs/kit';
-
+/* 
 export const handle = (async ({ event, resolve }) => {
     const url = new URL(event.request.url);
     const subdomain = getSubdomain(url.host)
@@ -23,4 +23,4 @@ export const handle = (async ({ event, resolve }) => {
 
     const response = await resolve(event);
     return response
-}) satisfies Handle;
+}) satisfies Handle; */
