@@ -18,7 +18,7 @@
     import {Button} from "flowbite-svelte";
     import {selectedDate} from '$lib/store'
     
-
+    export let appointment: boolean = true
     let newSelectedDate: Date;
     const today = startOfToday();
     
@@ -72,7 +72,7 @@
     </script>
     
     <div class="p-4  mt-16 ml-6 flex items-center justify-center shadow-md bg-white rounded-lg h-1/4">
-        <div class=" h-[600px] ">
+        <div class="">
           <div class="flex items-center justify-between">
             <p class="font-semibold text-xl">
               {format(firstDayOfMonth, "MMMM yyyy")}
@@ -111,7 +111,10 @@
             {/each}
             
           </div>
+          {#if appointment}
           <div class="divider"></div>
           <Button color="blue" class="w-full">New appointment</Button>
+          {/if}
         </div>
+        
       </div>

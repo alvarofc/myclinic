@@ -1,19 +1,10 @@
 <script lang="ts">
 	import { Button } from "flowbite-svelte";
     import {selectedDate} from '$lib/store'
+    
     import {
         format
         } from "date-fns";
-
-    let newSelectedDate: Date;
-    let titleDate: string;
-    selectedDate.subscribe((value) => {
-      newSelectedDate = value;
-      titleDate = format(newSelectedDate, "dd-MM-yyyy");
-	});
-
-    
-     
 
 
     export let appointments = [ 
@@ -35,7 +26,7 @@
   </script>
   
   <div class="bg-white w-2/6 mt-16 rounded-lg ml-72 h-[calc(100vh-70px)] shadow-md overflow-auto no-scrollbar">
-    <h2 class="text-lg font-semibold mb-4 pl-4 pt-5">Appointments for {titleDate}</h2>
+    <h2 class="text-lg font-semibold mb-4 pl-4 pt-5">Appointments for {format($selectedDate, "dd-MM-yyyy")}</h2>
     
     {#if appointments.length === 0}
       <p class="text-gray-600">No appointments for this day.</p>
