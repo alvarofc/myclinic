@@ -1,5 +1,5 @@
 // place files you want to import through the `$lib` alias in this folder.
-
+import {supabase} from '$lib/supabaseClient';
 export const countryList = [ 
 	{"name": "Afghanistan", "value": "AF"}, 
 	{"name": "land Islands", "value": "AX"}, 
@@ -246,4 +246,25 @@ export const countryList = [
 	{"name": "Zambia", "value": "ZM"}, 
 	{"name": "Zimbabwe", "value": "ZW"} 
 	]
+
+export function getSubdomain(host:string) {
+	console.log("we got: ",host)
+	const parts = host.split('.');
+	if (parts.length > 2 || parts[1].startsWith('localhost')) {
+		return parts[0];
+	}
+	return null;
+}
+
+export async function isValidTenant(subdomain:string) {
+	const {data, error} = await supabase
+	.rpc('isValidTenant', {
+		subdomain
+	  })
+	if (error) console.log(error)
+	console.log(data)
+
+		return !!data;
+	
+}
 

@@ -1,4 +1,4 @@
-<script>
+<script contect="module">
   import LandingNav from '../lib/components/LandingNav.svelte';
 
     import cross from '$lib/images/cross.png';
@@ -211,12 +211,12 @@
             
     </div>
   </section>
- <section class="bg-blue-950 h-96 content-center">
+ <section class="bg-blue-950 h-96 flex flex flex-col justify-center">
     <div class="">
         <div class="max-w-6xl px-6 py-16 mx-auto text-center">
             <h2 class="text-5xl font-bold text-white">Deliver your best work with scruber</h2>
             <p class="mt-4 mb-8 text-lg text-white">Start your free 30-day trial today.</p>
-            <Button color="light" >
+            <Button color="light" href="/signup">
                 Get started  
                 <svg class="w-5 h-5 ml-2 -mr-1 translate-x-0 relative transition duration-150 ease-in-out group-hover:transition group-hover:duration-150 group-hover:ease-in-out group-hover:translate-x-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </Button>

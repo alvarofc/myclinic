@@ -12,7 +12,7 @@
     });
     
   </script>
-  <html class="scroll-smooth bg-gray-100">
+  <html class="scroll-smooth bg-gray-100" lang="en">
   <main >
     
     <slot />
