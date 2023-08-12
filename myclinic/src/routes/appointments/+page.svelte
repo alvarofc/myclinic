@@ -1,6 +1,5 @@
 <script lang="ts">
     import {Button, Select} from 'flowbite-svelte';
-    import TimeSlot from '$lib/components/TimeSlot.svelte';
     import Calendar from '$lib/components/Calendar.svelte';
     import {selectedDate} from '$lib/store'
     import LandingNav from '$lib/components/LandingNav.svelte'
