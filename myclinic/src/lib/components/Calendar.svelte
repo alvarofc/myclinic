@@ -18,7 +18,9 @@
     import {Button} from "flowbite-svelte";
     import {selectedDate} from '$lib/store'
     
-    export let appointment: boolean = true
+    export let appointment: boolean = true;
+    export let vacation: boolean = true;
+    export let unavailableRegular: Array<Date> = []
     let newSelectedDate: Date;
     const today = startOfToday();
     
@@ -51,12 +53,12 @@
 
 
     const days = [
-        {id:1, name: "S"},
-        {id:2, name: "M"},
-        {id:3, name: "T"},
-        {id:4, name: "W"},
-        {id:5, name: "T"},
-        {id:6, name: "F"},
+        {id:1, name: "M"},
+        {id:2, name: "T"},
+        {id:3, name: "W"},
+        {id:4, name: "T"},
+        {id:5, name: "F"},
+        {id:6, name: "S"},
         {id:7, name: "S"},
         
     ];
@@ -111,9 +113,14 @@
             {/each}
             
           </div>
-          {#if appointment}
+          {#if appointment || vacation }
           <div class="divider"></div>
+          {/if}
+          {#if appointment}
           <Button color="blue" class="w-full">New appointment</Button>
+          {/if}
+          {#if vacation}
+          <Button color="green" class="w-full mt-4">New vacation</Button>
           {/if}
         </div>
         

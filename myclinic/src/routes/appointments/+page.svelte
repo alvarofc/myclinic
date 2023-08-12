@@ -128,7 +128,7 @@
     {:else if page == 3}
     <section class="flex justify-between items-start "> 
         <div class="w-2/4 mr-8 h-2/4"> 
-            <Calendar appointment={false}/> 
+            <Calendar appointment={false} vacation={false}/> 
         </div> 
         <div class="slots-container p-4  mt-16 border rounded-lg shadow w-2/4 bg-white  md:mr-6"> 
             <!--Time slots--> 

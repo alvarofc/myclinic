@@ -107,21 +107,21 @@
       {:else}
         <div class="flex flex-wrap">
           {#each requests as appointment, index}
-            <div class="border rounded-lg shadow-md bg-white p-5 flex flex-col  mx-auto my-2">
+            <div class="card bg-white p-5 flex flex-col  mx-auto my-2">
               <div class="mb-4">
                 <h2 class="text-lg font-semibold">{appointment.patient}</h2>
                 <p>{appointment.request}</p>
                 <p class="text-gray-500">Dr. whoever</p>
                 <p class="text-gray-500">{appointment.date} at {appointment.time}</p>
               </div>
-              <div class="flex justify-between mt-auto">
-                <button class="btn btn-primary btn-sm" on:click={()=>acceptAppointment(index)}>
+              <div class="card-actions join">
+                <button class="btn btn-success btn-sm join-item" on:click={()=>acceptAppointment(index)}>
                   Accept
                 </button>
-                <button class="btn btn-danger btn-sm ml-3" on:click={()=>declineAppointment(index)}>
+                <button class="btn btn-error btn-sm join-item" on:click={()=>declineAppointment(index)}>
                   Decline
                 </button>
-                <button class="btn btn-info btn-sm ml-3" on:click={null}>
+                <button class="btn btn-warning btn-sm join-item" on:click={null}>
                   Schedule
                 </button>
               </div>

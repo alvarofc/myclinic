@@ -1,26 +1,26 @@
 import { getSubdomain, isValidTenant } from "$lib"
 import type { Handle } from '@sveltejs/kit';
-/* 
-export const handle = (async ({ event, resolve }) => {
-    const url = new URL(event.request.url);
-    const subdomain = getSubdomain(url.host)
-    console.log('subdomain', subdomain )
-    if (subdomain && subdomain !== 'www' && url.pathname === '/') {
-        const isValid = await isValidTenant(subdomain)
-        if (isValid) {
-            return {
-                status: 302,
-                headers: {
-                    location: `/appointments`
-                }
-            }
-        }
-        return {
-            status: 404,
-            error: new Error('Invalid tenant')
-        }
-    }   
+import { createSupabaseServerClient } from "@supabase/auth-helpers-sveltekit"
+import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public'
 
-    const response = await resolve(event);
-    return response
-}) satisfies Handle; */
+
+export const handle: Handle = (async ({ event, resolve }) => {
+    event.locals.supabase = createSupabaseServerClient({supabaseUrl: PUBLIC_SUPABASE_URL, 
+        supabaseKey: PUBLIC_SUPABASE_ANON_KEY, 
+        event
+    })
+    event.locals.getSession = async () =>  {
+        const {
+        data: { session },
+    } = await event.locals.supabase.auth.getSession()
+    return session
+    }
+    
+
+    
+    return resolve(event, {
+        filterSerializedResponseHeaders(name){
+            return name === 'content-range'
+        }
+    })
+}) ; 
