@@ -1,7 +1,6 @@
 <script lang="ts">
     import {Button, Select} from 'flowbite-svelte';
     import TimeSlot from '$lib/components/TimeSlot.svelte';
-    import { supabase } from '$lib/supabaseClient';
     import Calendar from '$lib/components/Calendar.svelte';
     import {selectedDate} from '$lib/store'
     import LandingNav from '$lib/components/LandingNav.svelte'
@@ -119,7 +118,7 @@
                         {specialist.specialty.join(' | ')}
                     </span>
                     <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Bonnie drives the technical strategy of the flowbite platform and brand.</p>
-                    <Button color="blue" size="lg" class="float-right sm:w-full sm:mb-4" on:click={()=>{staff=specialist.id;  page=3}}>Select</Button>
+                    <Button color="blue" size="lg" class="float-right sm:w-full sm:mb-4" on:click={()=>{staff=specialist.id.toString();  page=3}}>Select</Button>
                 </div>
             </div> 
             {/each}
