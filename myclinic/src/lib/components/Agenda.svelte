@@ -8,7 +8,11 @@
         } from "date-fns";
 
 
-
+    export let marginLeft: string = "ml-72";
+    export let marginTop: string = "mt-16";
+    export let width: string = "w-2/6";
+    export let height: string = "h-[calc(100vh-70px)]";
+    export let date = $selectedDate
     export let appointments = [ 
     {   
         patientName: "Neil Sims",
@@ -52,10 +56,10 @@
     });
     
   </script>
-  <div  class="flex flex-col bg-white w-2/6 mt-16 rounded-lg ml-72 h-[calc(100vh-70px)] shadow-md overflow-hidden">
+  <div  class="flex flex-col bg-white {width} {marginTop} rounded-lg {marginLeft} {height} shadow-md overflow-hidden">
   
     <h2 class="text-lg font-semibold mb-4 pl-4 pt-5 sticky top-0 bg-white z-20">
-      Appointments for {format($selectedDate, "dd-MM-yyyy")}
+      Appointments for {format(date, "dd-MM-yyyy")}
     </h2>
   
     <div bind:this={container} class="relative flex-1 overflow-y-auto  no-scrollbar">
@@ -80,7 +84,7 @@
   
       {#if isEqual(currentDate.getDate(), $selectedDate.getDate())}
         <div class="absolute bg-red-500 w-full h-0.5 left-0 z-10" 
-          style="top: {((currentHour+1) * 64) + (currentMinute * (64 /60))}px;"
+          style="top: {((currentHour) * 64) + (currentMinute * (64 /60))}px;"
         ></div>
       {/if}
     </div>

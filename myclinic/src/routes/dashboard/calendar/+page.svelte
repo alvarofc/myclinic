@@ -5,7 +5,7 @@
     
     
 </script>
-<main class="flex flex row">
+<main class="flex flex-row sm:flex-col">
     <Agenda />
     <Calendar />
 </main>

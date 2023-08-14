@@ -21,17 +21,17 @@
             <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Designed For <span>You, </span><br> With <span class="text-blue-700"> Your Patients</span> In Mind</h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Say goodbye to confusing paperwork, missed appointments, and disorganized patient records. Our software streamlines your workflow and saves you time so you can focus on what really matters - your patients.</p>
             <a href="/signup">
-            <Button color="blue" size="lg">
+            <Button color="blue" size="lg" class="group ">
                 Get started
-                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 ml-2 -mr-1 group-hover:translate-x-2 ease-in-out duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </Button>
             </a>
             <a href="/contact" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                 Book a call
             </a> 
         </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <div class="mockup-browser border bg-base-300">
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ">
+            <div class="mockup-browser border bg-base-300 ">
                 <div class="mockup-browser-toolbar">
                   <div class="input">https://yourclinic.scruber.us</div>
                 </div>

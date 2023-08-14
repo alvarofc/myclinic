@@ -53,14 +53,15 @@
 	<Tabs style="underline">
 	<TabItem value="medicalHistory" open>
 		<div slot="title" class="flex items-center gap-2">
-			<Icon name="user-circle-solid" size="sm" />
+			<Icon name="adress-book-solid" size="sm" />
 			Medical History
 		  </div>
 		  <MedicalHistory {medicalHistory} />
 	</TabItem>
 	<TabItem value="appointments">
 		<div slot="title" class="flex items-center gap-2">
-			<Icon name="user-circle-solid" size="sm" />
+			
+			<Icon name="calendar-week-solid" size="sm" />
 			Appointments
 		  </div>
 		  <PatientAppointments {appointments} />
@@ -74,14 +75,14 @@
 	</TabItem>
 	<TabItem value="labs">
 		<div slot="title" class="flex items-center gap-2">
-			<Icon name="user-circle-solid" size="sm" />
+			<Icon name="chart-pie-solid" size="sm" />
 			Metrics & Results
 		  </div>
 		<LabResults />
 	</TabItem>
 	<TabItem value="notes">
 		<div slot="title" class="flex items-center gap-2">
-			<Icon name="user-circle-solid" size="sm" />
+			<Icon name="file-solid" size="sm" />
 			Notes & Documents
 		  </div>
 		<NotesAndDocuments />

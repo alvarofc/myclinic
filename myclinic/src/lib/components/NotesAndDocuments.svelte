@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Fileupload, Label, Helper } from 'flowbite-svelte';
+  import Notes from './Notes.svelte';
     let note = '';
     let documents = [
         {
@@ -65,7 +66,8 @@
   
   <section class="bg-white p-6 mt-6 rounded-lg shadow-md">
     <h3 class="text-xl font-semibold mb-4">Notes and Documents</h3>
-    
+    <!-- Notes -->
+    <Notes />
     <!-- Documents -->
     <div class="space-y-4 mt-6">
         <h4 class="font-medium text-lg">Upload Document:</h4>
@@ -76,22 +78,25 @@
         <h4 class="font-medium text-lg mt-4">Documents:</h4>
         <ul>
           {#each documents as document}
-            <li>
+            <li class="border p-4 rounded mb-2">
+              <div class="flex justify-between items-center">
+                <span class="font-medium">{document.name}</span>
+                <div>
+                  <a target="_blank" rel="noopener noreferrer">Download</a>
+                  <button class="text-red-600 ml-2">Delete</button>
+                  <button> Send</button>
+                </div>
+              </div>
               <!-- <a href={supabase.storage.from('documents').getPublicUrl(document.name)} target="_blank" rel="noopener noreferrer">
                 {document.name}
               </a> -->
-              {document.name}
+              
             </li>
           {/each}
         </ul>
       </div>
   
-    <!-- Notes -->
-    <div class="space-y-4">
-      <h4 class="font-medium text-lg">Add Note:</h4>
-      <textarea bind:value={note} class="w-full p-2 border rounded" placeholder="Enter note"></textarea>
-      <button on:click={addNote} class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Note</button>
-    </div>
+    
   
   </section>
   

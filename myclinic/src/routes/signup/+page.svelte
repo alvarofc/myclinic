@@ -67,7 +67,7 @@
         {#if step === 1}
           <!-- Step 1: User details -->
           <h2 class="text-xl font-semibold mb-4">Step 1: About you</h2>
-          <p>You'll be the Scruber account admin since you're creating the account (you can chnge this later).</p>
+          <p>You'll be the Scruber account admin since you're creating the account (you can cahnge this later).</p>
             <Label class="block mb-2">Name</Label>
             <Input type="text" name="name" class="border rounded-lg px-4 py-2 mb-4 w-full" placeholder="Enter your name" />
             <Label class="block mb-2">Surname</Label>
