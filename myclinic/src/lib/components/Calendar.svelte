@@ -120,7 +120,7 @@
           <Button color="blue" class="w-full">New appointment</Button>
           {/if}
           {#if vacation}
-          <Button color="green" class="w-full mt-4">New vacation</Button>
+          <Button color="green" class="w-full mt-4">New Day-Off</Button>
           {/if}
         </div>
         
