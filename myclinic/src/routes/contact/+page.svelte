@@ -19,8 +19,8 @@
             <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                 <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                     <li><a href="/#features" class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Features</a></li>
-                    <li><a href="/pricing" class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Pricing</a></li>
-                    <li><a href="/blog" class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Blog</a></li>
+                    <li><a href="/#pricing" class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Pricing</a></li>
+                    <!--<li><a href="/blog" class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400">Blog</a></li>-->
                 </ul>
             </div>
         </div>
@@ -51,7 +51,7 @@
                 <input type="tel" name="phone" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="+1555555555" required>
             </div>
             
-            <Button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300 ">Send</Button>
+            <Button type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300 ">Send</Button>
         </form>
     </div>
     {:else}

@@ -1,6 +1,6 @@
 <script contect="module">
   import LandingNav from '../lib/components/LandingNav.svelte';
-
+    import ProductShowcase from '$lib/components/ProductShowcase.svelte';
     import cross from '$lib/images/cross.png';
     import { Button, Tabs, TabItem, Badge  } from 'flowbite-svelte';
     let items = [
@@ -9,17 +9,17 @@
         {name:"Contact", link: "/contact"},
 
     ];
-
+    
 </script>
 <header>
     <LandingNav items={items}/>
 </header>
 <!--Hero section-->
-<section class="bg-white dark:bg-gray-900  md:pt-20">
-    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Designed For <span>You, </span><br> With <span class="text-blue-700"> Your Patients</span> In Mind</h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Say goodbye to confusing paperwork, missed appointments, and disorganized patient records. Our software streamlines your workflow and saves you time so you can focus on what really matters - your patients.</p>
+<section class="bg-white  md:pt-20 content-center">
+    <div class="  py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+        <div class=" place-self-center ">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">Designed For <span>You, </span><br> With <span class="text-blue-700"> Your Patients</span> In Mind</h1>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Say goodbye to confusing paperwork, missed appointments, and disorganized patient records. Our software streamlines your workflow and saves you time so you can focus on what really matters - your patients.</p>
             <a href="/signup">
             <Button color="blue" size="lg" class="group ">
                 Get started
@@ -30,14 +30,7 @@
                 Book a call
             </a> 
         </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ">
-            <div class="mockup-browser border bg-base-300 ">
-                <div class="mockup-browser-toolbar">
-                  <div class="input">https://yourclinic.scruber.us</div>
-                </div>
-                <img src="" class="flex justify-center px-4 py-16 bg-base-200">
-              </div>
-        </div>                
+                     
     </div>
     <!--Features-->
 </section>
@@ -110,6 +103,8 @@
         </div>
     </div>
   </section>
+  <ProductShowcase />
+
 <!--Pricing-->
   <section class="bg-white dark:bg-gray-900" id="pricing">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -131,7 +126,7 @@
                     <span class="text-gray-500 dark:text-gray-400">/month</span>
                     
                 </div>
-                <p class="text-gray-400 text-sm">+ VAT</p>
+               
                 <span class="mb-8 text-gray-500">Up to 8 practitioners</span>
                 <!-- List -->
                 <ul role="list" class="mb-8 space-y-4 text-left">
@@ -174,7 +169,7 @@
                     <span class="text-gray-500 dark:text-gray-400">/year</span>
                     
                 </div>
-                <p class="text-gray-400 text-sm">+ VAT</p>
+                
                 <span class="mb-8 text-gray-500">Up to 8 practitioners</span>
                 <!-- List -->
                 <ul role="list" class="mb-8 space-y-4 text-left">
@@ -211,7 +206,7 @@
             
     </div>
   </section>
- <section class="bg-blue-950 h-96 flex flex flex-col justify-center">
+ <section class="bg-[#021B79] h-96 flex flex flex-col justify-center">
     <div class="">
         <div class="max-w-6xl px-6 py-16 mx-auto text-center">
             <h2 class="text-5xl font-bold text-white">Deliver your best work with scruber</h2>
@@ -293,3 +288,39 @@
         </div>
     </div>
 </footer>
+
+<style>
+    #features-2 {
+        --sectionPad: clamp(1rem, min(8vh, 4vw), 8rem);
+    --primeColor: #F8FAFC;
+    --pureColor: #FFF;
+    --midColor: #68A;
+    --flowColor: #123;
+    --altColor: #05C;
+    --altColorTransparent: #05AB;
+    --altColorHover: #038;
+    --selectionColor: #FFF3;
+    --hoverColor: #FFF1;
+    --highlightColor: #CDF;
+    --focusColor: #08F;
+    --shadowColor: #0004;
+    --outlineColor: #0248;
+    --primeSelection: #0484;
+    --gradientStart: #05C;
+    --gradientEnd: #507;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: flowtext,arial,helvetica,sans-serif;
+    text-align: center;
+    color: var(--primeColor);
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: var(--sectionPad) clamp(0.5rem, 2vw, 2rem);
+    max-width: 100%;
+    padding-right: 0;
+    display: grid;
+    grid-template-areas: "features_header features_header"
+		"features_labels features_images";
+    grid-template-columns: 50% 50%;
+    }
+</style>
