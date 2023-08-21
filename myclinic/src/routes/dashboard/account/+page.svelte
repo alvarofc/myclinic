@@ -43,9 +43,10 @@
   <section class="bg-white p-6 rounded-lg shadow-md mb-6">
     <h2 class="text-xl font-medium mb-4">Profile Information</h2>
     <div class="space-y-4">
+      <img src={profilePicture} alt="Profile Picture" class="w-24 h-24 rounded-full">
       <p>Name: {name}</p>
       <p>Email: {email}</p>
-      <img src={profilePicture} alt="Profile Picture" class="w-24 h-24 rounded-full">
+      
       <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" on:click={() =>profileModal=true}>Edit Profile</button>
     </div>
   </section>
@@ -75,7 +76,7 @@
   <section class="bg-white p-6 rounded-lg shadow-md mb-6">
     <h2 class="text-xl font-medium mb-4">Availability</h2>
     <div class="space-y-4">
-      <p>Days: {availableDays.monday}</p>
+      <p>Days: { Object.keys(availableDays).filter(k => availableDays[k])}</p>
       <p>Hours: {availableHours.start} - {availableHours.end}</p>
       <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" on:click={() => availabilityModal=true}>Edit Availability</button>
     </div>
