@@ -89,37 +89,76 @@
                 
                 <!-- Modal content for editing clinic name -->
 
-                
+                <div class="mb-4">
+                    <h3 class="font-semibold text-lg">Website</h3>
+                    <input type="text" class="border border-gray-300 rounded w-full p-2 mt-2" placeholder="Website" bind:value={website}>
+                    <button on:click={()=> showModal=false} class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
+                </div>
 
             {/if}
             {#if modalContent === 'clinicUsername'}
                 <!-- Modal content for editing clinic username -->
                 <!-- ... -->
+                <div class="mb-4">
+                    <h3 class="font-semibold text-lg">Website</h3>
+                    <input type="text" class="border border-gray-300 rounded w-full p-2 mt-2" placeholder="Website" bind:value={website}>
+                    <button on:click={()=> showModal=false} class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
+                </div>
             {/if}
             {#if modalContent === 'opening'}
                 <!-- Modal content for editing opening days and hours -->
+                <div class="mb-4">
+                    <h3 class="font-semibold text-lg">Website</h3>
+                    <input type="text" class="border border-gray-300 rounded w-full p-2 mt-2" placeholder="Website" bind:value={website}>
+                    <button on:click={()=> showModal=false} class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
+                </div>
             
             {/if}
             {#if modalContent === 'logo'}
                 <!-- Modal content for editing clinic logo -->
+                <div class="mb-4">
+                    <h3 class="font-semibold text-lg">Website</h3>
+                    <input type="text" class="border border-gray-300 rounded w-full p-2 mt-2" placeholder="Website" bind:value={website}>
+                    <button on:click={()=> showModal=false} class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
+                </div>
                 
             {/if}
             {#if modalContent === 'admins'}
                 <!-- Modal content for editing clinic admins -->
-                
+                <div class="mb-4">
+                    <h3 class="font-semibold text-lg">Website</h3>
+                    <input type="text" class="border border-gray-300 rounded w-full p-2 mt-2" placeholder="Website" bind:value={website}>
+                    <button on:click={()=> showModal=false} class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
+                </div>
             {/if}
             {#if modalContent === 'contact'}
                 <!-- Modal content for editing contact information -->
-                
+                <div class="mb-4">
+                    <h3 class="font-semibold text-lg">Website</h3>
+                    <input type="text" class="border border-gray-300 rounded w-full p-2 mt-2" placeholder="Website" bind:value={website}>
+                    <button on:click={()=> showModal=false} class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
+                </div>
             {/if}
             {#if modalContent === 'address'}
                 <!-- Modal content for editing address -->
+                <div class="mb-4">
+                    <h3 class="font-semibold text-lg">Website</h3>
+                    <input type="text" class="border border-gray-300 rounded w-full p-2 mt-2" placeholder="Website" bind:value={website}>
+                    <button on:click={()=> showModal=false} class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
+                </div>
                 
             {/if}
             {#if modalContent === 'website'}
                 <!-- Modal content for editing website -->
                 <!--Input for website and confirmation button-->
-                
+                <div class="mb-4">
+                    <h3 class="font-semibold text-lg">Website</h3>
+                    <input type="text" class="border border-gray-300 rounded w-full p-2 mt-2" placeholder="Website" bind:value={website}>
+                    <button on:click={()=> showModal=false} class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Profile</button>
+                </div>
+
+
+
                 
             {/if}
             <!-- ... Add other modal contents similarly ... -->

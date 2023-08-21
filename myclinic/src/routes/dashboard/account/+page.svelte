@@ -1,5 +1,5 @@
 <script>
-  import { Modal } from 'flowbite-svelte';
+  import { Modal,Tabs, TabItem, Toggle, Button } from 'flowbite-svelte';
 
   let name = "John Doe";
   let email = "johndoe@example.com";
@@ -17,6 +17,47 @@
   let securityModal = false;
   let preferencesModal = false;
   let availabilityModal = false;
+  let breakTime = {
+    Monday : {
+      break: true,
+      start: "12:00",
+      end: "13:00"
+    },
+    Tuesday : {
+      break: true,
+      start: "12:00",
+      end: "13:00"
+    },
+    Wednesday : {
+      break: true,
+      start: "12:00",
+      end: "13:00"
+    },
+    Thursday : {
+      break: true,
+      start: "12:00",
+      end: "13:00"
+    },
+    Friday : {
+      break: true,
+      start: "12:00",
+      end: "13:00"
+    },
+    Saturday : {
+      break: false,
+      start: "12:00",
+      end: "13:00"
+    },
+    Sunday : {
+      break: false,
+      start: "12:00",
+      end: "13:00"
+    }
+
+  }
+    
+
+  
 
 
   function saveProfile() {
@@ -129,52 +170,45 @@
   </Modal>
 
   <!-- Availability Modal -->
-  <Modal bind:open={availabilityModal} outsideclose id="availabilityModal" title="Edit Availability">
-    <div class="space-y-4">
-      <!-- Days checkboxes -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Available Days</label>
-        <!-- Example for Monday, repeat for other days -->
-        <div>
-          <input type="checkbox" id="monday" bind:checked={availableDays.monday}>
-          <label for="monday" class="ml-2">Monday</label>
-        </div>
-        <div>
-          <input type="checkbox" id="tuesday" bind:checked={availableDays.tuesday}>
-          <label for="tuesday" class="ml-2">Tuesday</label>
-        </div>
-        <div>
-          <input type="checkbox" id="wednesday" bind:checked={availableDays.wednesday}>
-          <label for="wednesday" class="ml-2">Wednesday</label>
-        </div>
-        <div> 
-          <input type="checkbox" id="thursday" bind:checked={availableDays.thursday}>
-          <label for="thursday" class="ml-2">Thursday</label>
-        </div>
-        <div>
-          <input type="checkbox" id="friday" bind:checked={availableDays.friday}>
-          <label for="friday" class="ml-2">Friday</label>
-        </div>
-        <div>
-          <input type="checkbox" id="saturday" bind:checked={availableDays.saturday}>
-          <label for="saturday" class="ml-2">Saturday</label>
-        </div>
-        <div>
-          <input type="checkbox" id="sunday" bind:checked={availableDays.sunday}>
-          <label for="sunday" class="ml-2">Sunday</label>
-        </div>
-        <!-- Repeat for other days... -->
-      </div>
-      <!-- Hours input -->
-      <div>
-        <label for="startHour" class="block text-sm font-medium text-gray-700">Start Hour</label>
-        <input type="time" id="startHour" bind:value={availableHours.start} class="mt-1 p-2 w-full border rounded-md">
-      </div>
-      <div>
-        <label for="endHour" class="block text-sm font-medium text-gray-700">End Hour</label>
-        <input type="time" id="endHour" bind:value={availableHours.end} class="mt-1 p-2 w-full border rounded-md">
-      </div>
-      <button on:click={saveAvailability} class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Availability</button>
-    </div>
-  </Modal>
+  <Modal bind:open={availabilityModal} autoclose outsideclose id="availabilityModal" title="Edit Availability"> 
+    
+        <Tabs style="underline"> 
+            <TabItem open value="Monday"> 
+                <div slot="title" class="flex items-center gap-2 {availableDays.monday ? 'text-green-500' : 'text-red-500'}"> 
+                    Monday 
+                </div> 
+                <div class="space-y-4"> 
+                <div class="flex flex-col space-y-4"> <!-- This wrapper ensures the sections are stacked vertically -->
+                    <!-- Opening hours selector and open/close switch -->
+                    <div class="flex items-center gap-4"> 
+                        <Toggle bind:checked={availableDays.monday} >Open</Toggle> 
+                        {#if availableDays.monday} 
+                        <div class="flex items-center gap-4">
+                                <label for="mondayStart" class="block text-sm font-medium text-gray-700">Start Hour</label> 
+                                <input type="time" id="mondayStart" bind:value={availableHours.start} class="mt-1 p-2 w-full border rounded-md"> 
+                                
+                                    <label for="mondayEnd" class="block text-sm font-medium text-gray-700">End Hour</label> 
+                                    <input type="time" id="mondayEnd" bind:value={availableHours.end} class="mt-1 p-2 w-full border rounded-md"> 
+                                
+                        </div> 
+                        {/if} 
+                    </div>
+                    <!-- Break time logic -->
+                    <div class="flex items-center gap-4">
+                        <Toggle bind:checked={breakTime.Monday.break}>Break</Toggle> 
+                        {#if breakTime.Monday.break} 
+                            <label for="mondayBreakStart" class="block text-sm font-medium text-gray-700">Break start hour</label> 
+                            <input type="time" id="mondayBreakStart" bind:value={breakTime.Monday.start} class="mt-1 p-2 w-full border rounded-md"> 
+                            <label for="mondayBreakEnd" class="block text-sm font-medium text-gray-700">Break end hour</label> 
+                            <input type="time" id="mondayBreakEnd" bind:value={breakTime.Monday.end} class="mt-1 p-2 w-full border rounded-md"> 
+                        {/if} 
+                    </div>
+                </div>
+            </TabItem> 
+        </Tabs> 
+        <svelte:fragment slot="footer"> 
+            <Button on:click={() => alert('Handle "success"')}>Save</Button> 
+        </svelte:fragment> 
+</Modal>
+
 </main>
