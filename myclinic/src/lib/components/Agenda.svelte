@@ -24,7 +24,7 @@
         accepted: true,
     },
     {   
-        patientName: "Neil Sims",
+        patientName: "Adam Smith",
         treatment: "Cleaning",
         day: "2021-05-12",
         time: "10:30",

@@ -1,6 +1,7 @@
 <script>
 	import { Card, Button, ButtonGroup } from 'flowbite-svelte';
 	import Agenda from '$lib/components/Agenda.svelte';
+	import Reminders from '$lib/components/Reminders.svelte';
 	let requests = [
 		{
 			patient: 'Neil Sims',
@@ -42,13 +43,11 @@
 		</div>
 		<div class="grid grid-cols-2 grid-rows-2 gap-4 h-1/4">
 			<Card>
-				<p>Appointments today</p>
-				<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">5</h5>
+				<p>Notifications</p>
+				<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">5</h2>
 			</Card>
-
 			<Card>
-				<p>Requests</p>
-				<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">2</h5>
+			<Reminders />
 			</Card>
 			<Card>
 				<div class="justify-left space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
@@ -67,7 +66,7 @@
 		{:else}
 			<div class="flex flex-wrap">
 				{#each requests as appointment, index}
-					<div class="card bg-white p-5 flex flex-col mx-auto my-2">
+					<div class="card bg-white p-5 flex flex-col mx-auto my-2 shadow-md">
 						<div class="mb-4">
 							<h2 class="text-lg font-semibold">{appointment.patient}</h2>
 							<p>{appointment.request}</p>

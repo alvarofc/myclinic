@@ -1,5 +1,5 @@
 <script>
-  import { Modal,Tabs, TabItem, Toggle, Button } from 'flowbite-svelte';
+  import { Modal,Tabs, TabItem, Toggle, Button, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, } from 'flowbite-svelte';
 
   let name = "John Doe";
   let email = "johndoe@example.com";
@@ -11,48 +11,83 @@
   let language = "English";
   let timezone = "UTC";
   let notifications = true;
-  let availableDays = { monday: true, tuesday: true, wednesday: true, thursday: true, friday: true, saturday: false, sunday: false };
-  let availableHours = { start: "09:00", end: "17:00" };
+  let availableDays = { monday: {
+    open: true,
+    start: "12:00",
+    end: "13:00"
+  },
+  tuesday: {
+    open: true,
+    start: "12:00",
+    end: "13:00"
+  },
+  wednesday: {
+    open: true,
+    start: "12:00",
+    end: "13:00"
+  },
+  thursday: {
+    open: true,
+    start: "12:00",
+    end: "13:00"
+  },
+  friday: {
+    open: true,
+    start: "12:00",
+    end: "13:00"
+  },
+  saturday: {
+    open: false,
+    start: "12:00",
+    end: "13:00"
+  },
+  sunday: {
+    open: false,
+    start: "12:00",
+    end: "13:00"
+  }
+  }
   let profileModal = false;
   let securityModal = false;
   let preferencesModal = false;
   let availabilityModal = false;
   let breakTime = {
-    Monday : {
+    monday : {
       break: true,
       start: "12:00",
       end: "13:00"
     },
-    Tuesday : {
+    tuesday : {
       break: true,
       start: "12:00",
       end: "13:00"
     },
-    Wednesday : {
+    wednesday : {
       break: true,
       start: "12:00",
       end: "13:00"
     },
-    Thursday : {
+    thursday : {
       break: true,
       start: "12:00",
       end: "13:00"
     },
-    Friday : {
+    friday : {
       break: true,
       start: "12:00",
       end: "13:00"
     },
-    Saturday : {
+    saturday : {
       break: false,
       start: "12:00",
       end: "13:00"
     },
-    Sunday : {
+    sunday : {
       break: false,
       start: "12:00",
       end: "13:00"
     }
+  
 
   }
     
@@ -116,11 +151,30 @@
   <!-- Availability -->
   <section class="bg-white p-6 rounded-lg shadow-md mb-6">
     <h2 class="text-xl font-medium mb-4">Availability</h2>
-    <div class="space-y-4">
-      <p>Days: { Object.keys(availableDays).filter(k => availableDays[k])}</p>
-      <p>Hours: {availableHours.start} - {availableHours.end}</p>
-      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" on:click={() => availabilityModal=true}>Edit Availability</button>
-    </div>
+    <Table hoverable={true}>
+
+      <TableHead>
+       
+        <TableHeadCell>Monday</TableHeadCell>
+        <TableHeadCell>Tuesday</TableHeadCell>
+        <TableHeadCell>Wednesday</TableHeadCell>
+        <TableHeadCell>Thursday</TableHeadCell>
+        <TableHeadCell>Friday</TableHeadCell>
+        <TableHeadCell>Saturday</TableHeadCell>
+        <TableHeadCell>Sunday</TableHeadCell>
+        
+      </TableHead>
+      <TableBody>
+        {#each Object.keys(availableDays) as day}
+          <TableBodyCell>
+            {availableDays[day]['open'] ? `${availableDays[day]['start']} - ${availableDays[day]['end']}` : "Not available"}
+          </TableBodyCell>
+        {/each}
+      </TableBody>
+      
+      
+    </Table>
+    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-4" on:click={() => availabilityModal=true}>Edit Availability</button>
   </section>
 
   <!-- Modals -->
@@ -170,44 +224,55 @@
   </Modal>
 
   <!-- Availability Modal -->
-  <Modal bind:open={availabilityModal} autoclose outsideclose id="availabilityModal" title="Edit Availability"> 
+  <Modal bind:open={availabilityModal} outsideclose id="availabilityModal" title="Edit Availability"> 
     
         <Tabs style="underline"> 
-            <TabItem open value="Monday"> 
-                <div slot="title" class="flex items-center gap-2 {availableDays.monday ? 'text-green-500' : 'text-red-500'}"> 
-                    Monday 
+          {#each Object.keys(availableDays) as day}
+            <TabItem value={day}> 
+                <div slot="title" class="flex items-center gap-2 {availableDays[day].open ? 'text-green-500' : 'text-red-500'}"> 
+                    {day.toUpperCase()} 
                 </div> 
                 <div class="space-y-4"> 
                 <div class="flex flex-col space-y-4"> <!-- This wrapper ensures the sections are stacked vertically -->
                     <!-- Opening hours selector and open/close switch -->
-                    <div class="flex items-center gap-4"> 
-                        <Toggle bind:checked={availableDays.monday} >Open</Toggle> 
+                    <div class=""> 
+                      
+                        <Toggle bind:checked={availableDays[day].open} >{availableDays[day].open ? "Open" : "Closed"}</Toggle> 
+                        <p class="pt-4">Set opening hours: </p>
                         {#if availableDays.monday} 
                         <div class="flex items-center gap-4">
-                                <label for="mondayStart" class="block text-sm font-medium text-gray-700">Start Hour</label> 
-                                <input type="time" id="mondayStart" bind:value={availableHours.start} class="mt-1 p-2 w-full border rounded-md"> 
                                 
-                                    <label for="mondayEnd" class="block text-sm font-medium text-gray-700">End Hour</label> 
-                                    <input type="time" id="mondayEnd" bind:value={availableHours.end} class="mt-1 p-2 w-full border rounded-md"> 
+                                <input type="time" id="mondayStart" bind:value={availableDays[day].start} class="mt-1 p-2 w-full border rounded-md"> 
+                                
+                                <div class="divider lg:divider-horizontal">TO</div> 
+                                    <input type="time" id="mondayEnd" bind:value={availableDays[day].end} class="mt-1 p-2 w-full border rounded-md"> 
                                 
                         </div> 
                         {/if} 
                     </div>
                     <!-- Break time logic -->
+                    {#if availableDays[day].open}
+                      <Toggle bind:checked={breakTime[day].break}>Break</Toggle> 
+                      <p class="pt-4">Set break time: </p>
                     <div class="flex items-center gap-4">
-                        <Toggle bind:checked={breakTime.Monday.break}>Break</Toggle> 
-                        {#if breakTime.Monday.break} 
-                            <label for="mondayBreakStart" class="block text-sm font-medium text-gray-700">Break start hour</label> 
-                            <input type="time" id="mondayBreakStart" bind:value={breakTime.Monday.start} class="mt-1 p-2 w-full border rounded-md"> 
-                            <label for="mondayBreakEnd" class="block text-sm font-medium text-gray-700">Break end hour</label> 
-                            <input type="time" id="mondayBreakEnd" bind:value={breakTime.Monday.end} class="mt-1 p-2 w-full border rounded-md"> 
+                      
+                        {#if   breakTime[day].break} 
+                        
+                            <input type="time" id="mondayBreakStart" bind:value={breakTime[day].start} class="mt-1 p-2 w-full border rounded-md"> 
+                            <div class="divider lg:divider-horizontal">TO</div>  
+                            <input type="time" id="mondayBreakEnd" bind:value={breakTime[day].end} class="mt-1 p-2 w-full border rounded-md"> 
                         {/if} 
-                    </div>
+                      </div>
+                      {/if}
+                    
                 </div>
             </TabItem> 
+           {/each}
+
         </Tabs> 
         <svelte:fragment slot="footer"> 
-            <Button on:click={() => alert('Handle "success"')}>Save</Button> 
+            <Button on:click={() => alert('Handle "success"')} color="blue">Save</Button> 
+            <Button on:click={() => availabilityModal = false} color="gray">Cancel</Button>
         </svelte:fragment> 
 </Modal>
 
