@@ -2,6 +2,7 @@
   import LandingNav from '../lib/components/LandingNav.svelte';
     import ProductShowcase from '$lib/components/ProductShowcase.svelte';
     import cross from '$lib/images/cross.png';
+    import background from '$lib/images/background.png';
     import { Button, Tabs, TabItem, Badge  } from 'flowbite-svelte';
     let items = [
         {name: "Features", link: "/#features"},
@@ -15,7 +16,7 @@
     <LandingNav items={items}/>
 </header>
 <!--Hero section-->
-<section class="bg-white  md:pt-20 content-center">
+<section class="bg-white  md:pt-20 content-center " style="background-image: url({background}); ">
     <div class="  py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <div class=" place-self-center ">
             <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">Designed For <span>You, </span><br> With <span class="text-blue-700"> Your Patients</span> In Mind</h1>
@@ -26,7 +27,7 @@
                 <svg class="w-5 h-5 ml-2 -mr-1 group-hover:translate-x-2 ease-in-out duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </Button>
             </a>
-            <a href="/contact" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            <a href="/contact" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 bg-white">
                 Book a call
             </a> 
         </div>
