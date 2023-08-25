@@ -21,7 +21,7 @@
 			Everything you need in one place
 		</h2>
 		<p class="mb-5 font-light text-white sm:">
-			We believe in transparency and simplicity when it comes to pricing.
+			Take a look at what you are going to be able to do with Scruber.
 		</p>
 	</div>
 	<div class="flex flex-col  items-center justify-center w-full overflow-hidden mb-6">
