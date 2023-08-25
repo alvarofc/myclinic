@@ -1,11 +1,11 @@
 <script>
 	let selectedImage = 1;
-
+	import homeScreen from '$lib/images/homescreen.png';
 	const products = [
 		{
 			title: 'Product 1',
 			description: 'Description for product 1',
-			image: 'https://www.datapine.com/images/it-dashboards-datapine.png'
+			image: homeScreen
 		},
 		{ title: 'Product 2', description: 'Description for product 2', image: '/path/to/image2.jpg' },
 		{ title: 'Product 3', description: 'Description for product 3', image: '/path/to/image3.jpg' },
@@ -45,13 +45,13 @@
 
 		<!-- Displayed Image -->
 		<div class="mockup-browser border bg-white  h-auto mx-8">
-			<div class="mockup-browser-toolbar">
+			<div class="mockup-browser-toolbar flex-shrink">
 				<div class="input">https://yourclinic.scruber.us</div>
 			</div>
 			<img
 				src={products[selectedImage - 1].image}
 				alt="Selected Product"
-				class="w-full object-cover"
+				class="w-full object-cover flex-shrink"
 			/>
 		</div>
 	</div>
