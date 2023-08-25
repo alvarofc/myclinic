@@ -1,7 +1,31 @@
 <script>
-	import { Card, Button, ButtonGroup } from 'flowbite-svelte';
+	import NewRequests from '$lib/components/NewRequests.svelte';
+	import { Card, Button, ButtonGroup, Badge, Avatar } from 'flowbite-svelte';
 	import Agenda from '$lib/components/Agenda.svelte';
 	import Reminders from '$lib/components/Reminders.svelte';
+	let nextPatients = [
+		{
+			name: 'Neil Sims',
+			id: '123456789',
+			time: '08:00',
+			procedure: 'cleaning',
+			picture: 'https://flowbite.com/docs/images/people/profile-picture-2.jpg'
+		},
+		{
+			name: 'Neil Sims',
+			id: '123456787',
+			time: '08:00',
+			procedure: 'cleaning',
+			picture: 'https://flowbite.com/docs/images/people/profile-picture-3.jpg'
+		},
+		{
+			name: 'Neil Sims',
+			id: '1234567',
+			time: '08:00',
+			procedure: 'cleaning',
+			picture: 'https://flowbite.com/docs/images/people/profile-picture-4.jpg'
+		}
+	]
 	let requests = [
 		{
 			patient: 'Neil Sims',
@@ -33,6 +57,7 @@
 	function rescheduleAppointment(index) {
 		// logic to reschedule appointment
 	}
+	let remindersModal = false;
 </script>
 
 <main class="p-4 md:ml-64 h-auto pt-20">
@@ -43,54 +68,97 @@
 		</div>
 		<div class="grid grid-cols-2 grid-rows-2 gap-4 h-1/4">
 			<Card>
-				<p>Notifications</p>
-				<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">5</h2>
+				<h2 class="text-xl font-bold text-black">Notifications</h2>
+				<ul class="mt-2 justify-between">
+					<li class=" mb-2 border-b">
+						<div class="mb-2 flex items-center justify-between">
+							<div class="flex">
+								<svg
+									class="w-6 h-6 text-green-400 dark:text-white"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 20 18"
+								>
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M16 5h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-2v3l-4-3H8m4-13H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h2v3l4-3h4a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1Z"
+									/>
+								</svg>
+								<p class="text-md text-gray-500 ml-4">Messages</p>
+							</div>
+							<Badge class="bg-green-400 text-white" rounded href="/dashboard/messages">2</Badge>
+						</div>
+					</li>
+					<li class="flex items-center justify-between mb-2 border-b">
+						<svg
+							class="w-6 h-6 text-gray-800 dark:text-white"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 20 20"
+						>
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M5 1v3m5-3v3m5-3v3M1 7h18M5 11h10M2 3h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"
+							/>
+						</svg>
+						<p class="text-sm text-black">Appointment requests</p>
+						<Badge class="bg-green-400 text-white" rounded>{requests.length}</Badge>
+					</li>
+				</ul>
 			</Card>
 			<Card>
-			<Reminders />
-			</Card>
-			<Card>
-				<div class="justify-left space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-					<p>Next appointments</p>
+				<div class="flex justify-between items-center">
+					<h2 class="text-xl font-bold text-black">Reminders</h2>
+					<Button class="" on:click={() => (remindersModal = true)}>
+						<svg
+							class="w-4 h-4 text-blue-800"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 18 18"
+						>
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 1v16M1 9h16"
+							/>
+						</svg>
+					</Button>
 				</div>
-				<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">2</h5>
+				<Reminders {remindersModal} />
+			</Card>
+			<Card>
+				<h2 class="text-xl font-bold text-black">Next patients</h2>
+				<ul class="overflow-y-auto no-scrollbar">
+					{#if nextPatients.length === 0}
+						<li class="text-gray-500 text-center">No patients</li>
+					{/if}
+					{#each nextPatients as nextPatient, index}
+						<li class=" border-b ">
+							<div class="my-2 flex">
+							<Avatar src={nextPatient.picture} />
+							<div class="ml-2">
+								<p class="font-medium">{nextPatient.name}</p>
+								<p class="text-sm text-gray-500">{nextPatient.procedure} - {nextPatient.time}</p>
+							</div>
+							</div>
+						</li>
+						
+					{/each}
+				</ul>
 			</Card>
 		</div>
 	</div>
 	<!--Appointment requests-->
-	<div class="  mb-4">
-		<h1 class="text-lg font-semibold mb-4">Requested Appointments</h1>
-
-		{#if requests.length === 0}
-			<p>No appointments found.</p>
-		{:else}
-			<div class="flex flex-wrap">
-				{#each requests as appointment, index}
-					<div class="card bg-white p-5 flex flex-col mx-auto my-2 shadow-md">
-						<div class="mb-4">
-							<h2 class="text-lg font-semibold">{appointment.patient}</h2>
-							<p>{appointment.request}</p>
-							<p class="text-gray-500">Dr. whoever</p>
-							<p class="text-gray-500">{appointment.date} at {appointment.time}</p>
-						</div>
-						<div class="card-actions join">
-							<button
-								class="btn btn-success btn-sm join-item"
-								on:click={() => acceptAppointment(index)}
-							>
-								Accept
-							</button>
-							<button
-								class="btn btn-error btn-sm join-item"
-								on:click={() => declineAppointment(index)}
-							>
-								Decline
-							</button>
-							<button class="btn btn-warning btn-sm join-item" on:click={null}> Schedule </button>
-						</div>
-					</div>
-				{/each}
-			</div>
-		{/if}
-	</div>
+	<NewRequests />
 </main>

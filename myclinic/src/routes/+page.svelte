@@ -19,7 +19,7 @@
 <section class="bg-white  md:pt-20 content-center " style="background-image: url({background}); ">
     <div class="  py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <div class=" place-self-center ">
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">Designed For <span>You, </span><br> With <span class="text-blue-700"> Your Patients</span> In Mind</h1>
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">Your Time is Precious: <br> More Care, <span class="text-blue-700"> Less Mess</span></h1>
             <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Say goodbye to confusing paperwork, missed appointments, and disorganized patient records. Our software streamlines your workflow and saves you time so you can focus on what really matters - your patients.</p>
             <a href="/signup">
             <Button color="blue" size="lg" class="group ">
@@ -39,7 +39,7 @@
     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div class="max-w-screen-md mb-8 lg:mb-16">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Powerful Features to Streamline Your Clinic</h2>
-            <p class="text-gray-500 sm:text-xl dark:text-gray-400">Our software offers a suite of features designed to simplify your workflow, improve patient care, and enhance clinic operations.</p>
+            <p class="text-gray-500 sm:text-xl dark:text-gray-400">Our software offers a suite of features designed to simplify your workflow, improve patient care, and enhance clinic operations. Even if you are not great with computers.</p>
         </div>
         <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
             <div>
@@ -121,10 +121,10 @@
             
             <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow ">
                 <h3 class="mb-4 text-2xl font-semibold">Get to know us</h3>
-                <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Try Scruber and decide for yourself if we improve your day to day. Cancel anytime, we believe you won't.</p>
+                <p class="font-light text-gray-500 sm:text-lg ">Try Scruber and decide for yourself if we improve your day to day. Cancel anytime, we believe you won't.</p>
                 <div class="flex justify-center items-baseline mt-8">
                     <span class="mr-2 text-5xl font-extrabold">79€</span>
-                    <span class="text-gray-500 dark:text-gray-400">/month</span>
+                    <span class="text-gray-500 ">/month</span>
                     
                 </div>
                
