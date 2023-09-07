@@ -15,7 +15,7 @@
     let modalContent = '';
 </script>
 
-<main class="p-4 max-w-2xl mx-auto">
+<main class="p-4 max-w-2xl mx-auto mt-16">
     <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow">
         <h1 class="text-2xl font-bold mb-6">Clinic Settings</h1>
 

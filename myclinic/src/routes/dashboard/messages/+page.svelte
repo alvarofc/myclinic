@@ -1,111 +1,136 @@
 <script>
-	import { Textarea, Alert, ToolbarButton } from 'flowbite-svelte'
+	import { Textarea, Alert, ToolbarButton } from 'flowbite-svelte';
+
+
+	let conversations = [];
+	let currentConversation = null;
+	currentConversation = conversations[0]; // Set the first conversation as the current one
+
+	let newMessage = '';
+	// Generate fake messages and conversations similar to WhatsApp
+	conversations = [
+		{
+			title: 'Conversation 1',
+			lastMessage: 'Hello, this is a message from Conversation 1',
+      user: 'User 1',
+			messages: [
+				{ sender: 'User 1', text: 'Hello, this is a message from User 1', seen: false },
+				{ sender: 'User 2', text: 'Hello, this is a message from User 2' }
+			]
+		},
+		{
+			title: 'Conversation 2',
+			lastMessage: 'Hello, this is a message from Conversation 2',
+      user: 'User 2',
+			messages: [
+				{ sender: 'User 3', text: 'Hello, this is a message from User 3', seen: false },
+				{ sender: 'User 4', text: 'Hello, this is a message from User 4', seen: false }
+			]
+		}
+	];
+
+	// Function to select a conversation
+	function selectConversation(index) {
+		currentConversation = conversations[index];
+	}
+
+	// Function to add a message to the current conversation
+	function addMessageToConversation(message) {
+		currentConversation.messages.push({ sender: 'User', text: message, seen: false });
+		newMessage = '';
+	}
+
+	// Function to create a new conversation
+	function createNewConversation() {
+		const newConversation = {
+			title: `Conversation ${conversations.length + 1}`,
+			lastMessage: '',
+			messages: []
+		};
+		conversations.push(newConversation);
+		selectConversation(conversations.length - 1);
+	}
+
+	// Function to send a new message
+	function sendMessage() {
+		if (newMessage.trim() !== '') {
+			addMessageToConversation(newMessage);
+			currentConversation.lastMessage = newMessage;
+		}
+	}
+	let searchQuery = '';
+
+	function searchConversations() {
+		if (searchQuery.trim() !== '') {
+			conversations = conversations.filter((conversation) =>
+				conversation.user.includes(searchQuery)
+			);
+		}
+	}
 </script>
 
-<main class="p-4 h-screen md:ml-64  pt-20">
-
-    <div class="flex flex-row h-5/6 mb-4">
-        <!-- Component Start -->
-	<div class="flex flex-col flex-grow w-2/3 max-w-xl bg-white shadow-xl rounded-lg overflow-hidden">
-		<div class="flex flex-col flex-grow h-0 p-4 overflow-auto ">
-			<div class="flex w-full mt-2 space-x-3 max-w-xs justify-end">
-				<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
-				<div>
-					<div class="bg-gray-300 p-3 rounded-r-lg rounded-bl-lg">
-						<p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-					<span class="text-xs text-gray-500 leading-none">2 min ago</span>
-				</div>
-			</div>
-			<div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
-				<div>
-					<div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
-						<p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-					</div>
-					<span class="text-xs text-gray-500 leading-none">2 min ago</span>
-				</div>
-				<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
-			</div>
-			<div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
-				<div>
-					<div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
-						<p class="text-sm">Lorem ipsum dolor sit amet.</p>
-					</div>
-					<span class="text-xs text-gray-500 leading-none">2 min ago</span>
-				</div>
-				<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
-			</div>
-			<div class="flex w-full mt-2 space-x-3 max-w-xs">
-				<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
-				<div>
-					<div class="bg-gray-300 p-3 rounded-r-lg rounded-bl-lg">
-						<p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-					</div>
-					<span class="text-xs text-gray-500 leading-none">2 min ago</span>
-				</div>
-			</div>
-			<div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
-				<div>
-					<div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
-						<p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-					</div>
-					<span class="text-xs text-gray-500 leading-none">2 min ago</span>
-				</div>
-				<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
-			</div>
-			<div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
-				<div>
-					<div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
-						<p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-					</div>
-					<span class="text-xs text-gray-500 leading-none">2 min ago</span>
-				</div>
-				<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
-			</div>
-			<div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
-				<div>
-					<div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
-						<p class="text-sm">Lorem ipsum dolor sit amet.</p>
-					</div>
-					<span class="text-xs text-gray-500 leading-none">2 min ago</span>
-				</div>
-				<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
-			</div>
-			<div class="flex w-full mt-2 space-x-3 max-w-xs">
-				<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
-				<div>
-					<div class="bg-gray-300 p-3 rounded-r-lg rounded-bl-lg">
-						<p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-					</div>
-					<span class="text-xs text-gray-500 leading-none">2 min ago</span>
-				</div>
-			</div>
-			<div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end">
-				<div>
-					<div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
-						<p class="text-sm">Lorem ipsum dolor sit.</p>
-					</div>
-					<span class="text-xs text-gray-500 leading-none">2 min ago</span>
-				</div>
-				<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300"></div>
-			</div>
-		</div>
-		
-		<form>
-			<label for="chat" class="sr-only">Your message</label>
-			<Alert color="dark" class="px-3 py-2">
-			  <svelte:fragment slot="icon">
-			  
-			  <Textarea id="chat" class="mx-4" rows="1" placeholder="Your message..."/>
-			  <ToolbarButton type="submit" color="blue" class="rounded-full text-primary-600 dark:text-primary-500">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
-				  <span class="sr-only">Send message</span>
-			  </ToolbarButton>
-			  </svelte:fragment>
-			</Alert>
-		  </form>
-	</div>
-
+<main class="flex mt-16 ml-72 bg-white rounded-lg p-6">
+  <div class="flex flex-col conversations w-full">
+    <div class="flex justify-between items-center mb-4">
+      <div on:click={searchConversations} class="cursor-pointer">
+      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" >
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+      </svg>
+      </div>
+      <input bind:value={searchQuery} class="border rounded-lg p-2" placeholder="Search conversations..." />
+      <ToolbarButton on:click={createNewConversation}>
+       
+      </ToolbarButton>
     </div>
+    {#each conversations as conversation, index}
+      <div class="conversation" on:click={() => selectConversation(index)}>
+        <h2>{conversation.title}</h2>
+        <p>{conversation.lastMessage}</p>
+      </div>
+    {/each}
+  </div>
+  <div class="messages w-2/3">
+		{#if currentConversation}
+			<h2>{currentConversation.title}</h2>
+			{#each currentConversation.messages as message}
+				<div class=" chat {message.sender == 'User' ? 'chat-end' : 'chat-start'} ">
+					<div class="chat-header">
+						{message.sender}
+					</div>
+					<div class="chat-bubble chat-bubble-info">{message.text}</div>
+					<div class="chat-footer opacity-50 text-xs">
+						<time class="text-xs opacity-50">2 hours ago</time>
+						{#if message.seen && message.sender == 'User'}
+							- Seen
+						{/if}
+						{#if !message.seen && message.sender == 'User'}
+							- Unseen
+						{/if}
+					</div>
+				</div>
+			{/each}
+			<Textarea bind:value={newMessage} />
+			<ToolbarButton on:click={sendMessage}>Send</ToolbarButton>
+		{/if}
+	</div>
 </main>
 
+<style>
+	.conversations {
+		display: flex;
+		flex-direction: column;
+		border-right: 1px solid #ddd;
+		padding: 10px;
+	}
+	.conversation {
+		padding: 10px;
+		border-bottom: 1px solid #ddd;
+		cursor: pointer;
+	}
+	.messages {
+		padding: 10px;
+	}
+	.message {
+		margin-bottom: 10px;
+	}
+</style>

@@ -138,7 +138,7 @@
 				<Reminders {remindersModal} />
 			</Card>
 			<Card>
-				<h2 class="text-xl font-bold text-black">Next patients</h2>
+				<h2 class="text-xl font-bold text-black">Next appointments</h2>
 				<ul class="overflow-y-auto no-scrollbar">
 					{#if nextPatients.length === 0}
 						<li class="text-gray-500 text-center">No patients</li>

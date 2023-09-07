@@ -72,12 +72,14 @@
   
         
           {#each appointments as appointment}
+          <div class="mx-auto">
             <div  
-              class="absolute {appointment.accepted? "bg-blue-500": "bg-blue-300"} rounded-lg text-white  pl-2 ml-10 w-3/4" 
+              class="absolute {appointment.accepted? "bg-blue-500": "bg-blue-300"} rounded-lg text-white   w-full ml-14 mr-8" 
               style="top: {(timeToMinutes(appointment.time)) * 64 / 60}px; height: {(timeToMinutes(appointment.finish) - timeToMinutes(appointment.time)) * 64 / 60}px;"
             >
               {appointment.patientName}
             </div>
+          </div>
           {/each}
        
       </div>
